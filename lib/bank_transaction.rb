@@ -3,16 +3,17 @@ class BankTransaction
   attr_reader :credit, :debit
 
   def initialize
-    @credit = Array.new
+    @credit = Hash.new { | hash, key | hash[key] }
     @debit = Array.new
   end
 
-  def deposit(amount)
-    @credit.push(amount)
+  def deposit(money)
+    @credit[money] = date
+    # @credit.push(money)
   end
   
-  def withdrawl(amount)
-    @debit.push(amount)
+  def withdrawl(money)
+    @debit.push(money)
   end
   
   

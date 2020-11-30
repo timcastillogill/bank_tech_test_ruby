@@ -17,6 +17,11 @@ describe BankTransaction do
     banking.withdrawl(100)
     expect(banking.debit).to include(100.00)
   end
+
+  it 'adds the date when money is deposited' do
+    banking.deposit(50)
+    expect(banking.credit).to include {'30/11/2020'}
+  end'
   
 
 end
