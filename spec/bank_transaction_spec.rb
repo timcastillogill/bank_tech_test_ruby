@@ -3,6 +3,7 @@ require 'bank_transaction'
 describe BankTransaction do
   
   let(:banking) { described_class.new }
+  let(:date) { Date.today.strftime("%d/%m/%Y") }
   
   it 'returns the current date' do
     expect(banking.date).to eq '30/11/2020'
@@ -20,8 +21,11 @@ describe BankTransaction do
 
   it 'adds the date when money is deposited' do
     banking.deposit(50)
-    expect(banking.credit).to include {'30/11/2020'}
-  end'
-  
+    expect(banking.credit).to include 50 => date
+  end
 
+  it 'adds the date when money is withdrawn' do
+    banking.withdrawl(50)
+    expect(banking.debit).to include 50 => date
+  end
 end
