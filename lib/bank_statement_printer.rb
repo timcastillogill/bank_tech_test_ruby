@@ -14,7 +14,8 @@ class BankStatementPrinter
   end
 
   def import_debit_transactions
-    @transaction.debit.each { | key, array |
+    debit_transactions = @transaction.debit.reverse_each.to_h
+    debit_transactions.each { | key, array |
       array.push('debit')
     }
   end
