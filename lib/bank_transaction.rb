@@ -4,7 +4,7 @@ class BankTransaction
 
   def initialize
     @credit = Hash.new { | amount, date | amount[date] }
-    @debit = Hash.new { | amount, date | amount[date] = [] }
+    @debit = Hash.new { | amount, date | amount[date]  }
     @transaction_number = 0
     @balance = 0
   end

@@ -2,12 +2,27 @@ require_relative 'bank_transaction'
 
 class BankStatementPrinter
 
-  def initialize(bank_transaction)
-    @bank_transaction = bank_transaction
+  def initialize(transaction)
+    @transaction = transaction
+  end
+
+  def import_credit_transactions
+    credit_transactions = @transaction.credit.reverse_each.to_h
+    credit_transactions.each { | key, array |
+      array.push('credit')
+    }
+  end
+
+  def import_debit_transactions
+    @transaction.debit.each { | key, array |
+      array.push('debit')
+    }
   end
 
   def printer
-    @bank_transaction.balance
+    printable_string = ""
+    
   end
+
 
 end
