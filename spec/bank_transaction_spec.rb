@@ -6,21 +6,28 @@ describe BankTransaction do
   let(:date) { Date.today.strftime("%d/%m/%Y") }
   
   it 'returns the current date' do
-    expect(banking.date).to eq '30/11/2020'
+    expect(banking.date).to eq date
   end
 
   it 'accepts a deposit amount of £100.00' do
     banking.deposit(100)
-    expect(banking.credit).to include {100}
+    expect(banking.credit).to eq 1 => [100, date]
+  end
+
+  it 'accepts a deposit amount of £100.00 + £200.00' do
+    banking.deposit(100)
+    banking.deposit(200)
+    expect(banking.credit).to eq 1=> [100, date], 2=>[200, date]
   end
 
   it 'accepts a withdrawl amount of £100.00' do
     banking.withdrawl(100)
-    expect(banking.debit).to include{100.00}
+    expect(banking.debit).to eq 1=>[100.00, date]
   end
 
   it 'adds the date when money is deposited' do
     banking.deposit(50)
+    banking.deposit(500)
     expect(banking.credit).to include {[50, date]}
   end
 

@@ -1,14 +1,14 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/TimGill/Github/Makers_main/09_week/bank_tech_test_ruby/spec/bank_transaction_spec.rb": {
+      "/Users/TimGill/Documents/Github/Makers_main/09_week/bank_tech_test_ruby/spec/bank_transaction_spec.rb": {
         "lines": [
           1,
           null,
           1,
           null,
-          6,
-          1,
+          7,
+          5,
           null,
           1,
           1,
@@ -22,8 +22,15 @@
           1,
           1,
           1,
+          1,
           null,
           null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
           1,
           1,
           1,
@@ -50,31 +57,29 @@
           null
         ]
       },
-      "/Users/TimGill/Github/Makers_main/09_week/bank_tech_test_ruby/lib/bank_transaction.rb": {
+      "/Users/TimGill/Documents/Github/Makers_main/09_week/bank_tech_test_ruby/lib/bank_transaction.rb": {
         "lines": [
           1,
           null,
           1,
           null,
           1,
-          5,
+          6,
+          6,
+          6,
+          6,
+          null,
+          null,
+          1,
           5,
           null,
           null,
           1,
-          2,
-          2,
-          null,
-          null,
-          1,
-          2,
           2,
           null,
           null,
           1,
           0,
-          0,
-          null,
           null,
           null,
           null,
@@ -82,8 +87,8 @@
           null,
           null,
           1,
-          5,
-          5,
+          8,
+          8,
           null,
           null,
           null,
@@ -91,6 +96,6 @@
         ]
       }
     },
-    "timestamp": 1606757388
+    "timestamp": 1606811239
   }
 }
