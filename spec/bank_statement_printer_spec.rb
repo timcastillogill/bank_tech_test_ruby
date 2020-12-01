@@ -2,10 +2,15 @@ require 'bank_statement_printer'
 
 describe BankStatementPrinter do
 
-  let(:statement) { described_class.new }
+  before :each do
+    @transaction = BankTransaction.new
+  end
 
-  it 'will return a test' do
-    expect(statement.printer).to be_truthy
+  let(:statement) { described_class.new(@transaction) }
+
+  it 'will return the balance of a client' do
+    @transaction.deposit(100)
+    expect(statement.printer).to eq 100
   end
 
 end

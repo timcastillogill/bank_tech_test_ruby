@@ -1,7 +1,13 @@
+require_relative 'bank_transaction'
+
 class BankStatementPrinter
 
+  def initialize(bank_transaction)
+    @bank_transaction = bank_transaction
+  end
+
   def printer
-    true
+    @bank_transaction.balance
   end
 
 end
