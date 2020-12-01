@@ -18,7 +18,11 @@ class BankTransaction
   end
 
   def total_credit
-    @credit.values[0][0]
+    total_credit = 0
+    @credit.each { | key, array |
+      total_credit +=  array.first
+    }
+    return total_credit
   end
   
   # def balance
