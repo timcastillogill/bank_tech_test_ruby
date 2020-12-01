@@ -39,21 +39,22 @@ describe BankTransaction do
   it 'will calculate the total CREDIT in a clients account' do
     banking.deposit(200)
     banking.deposit(400)
-    expect(banking.total_credit).to eq 600
+    expect(banking.credit_calculator).to eq 600
   end
 
   it 'will calculate the total DEBITS on a clients account' do
     banking.deposit(1000)
     banking.withdrawl(300)
     banking.withdrawl(200)
-    expect(banking.total_debit).to eq 500
+    expect(banking.debit_calculator).to eq 500
   end
 
-
-  # it 'will calculate the clients balance' do
-  #   banking.deposit(1000)
-  #   banking.withdrawl(100)
-  #   expect(banking.balance).to eq 900.00
-  # end
+  it 'will calculate the clients balance' do
+    banking.deposit(1000)
+    banking.withdrawl(100)
+    banking.credit_calculator
+    banking.debit_calculator
+    expect(banking.balance).to eq 900.00
+  end
 
 end

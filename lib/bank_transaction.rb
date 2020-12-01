@@ -5,37 +5,39 @@ class BankTransaction
   def initialize
     @credit = Hash.new { | amount, date | amount[date] }
     @debit = Hash.new { | amount, date | amount[date] = [] }
-    @transaction_number_deposit = 0
-    @transaction_number_withdrawl = 0
+    @transaction_number = 0
+    @total_credit = 0
+    @total_debit = 0
   end
 
   def deposit(money)
-    @credit[@transaction_number_deposit += 1] = [money, date]
+    @credit[@transaction_number += 1] = [money, date]
   end
   
   def withdrawl(money)
-    @debit[@transaction_number_withdrawl += 1] = [money, date]
+    @debit[@transaction_number += 1] = [money, date]
   end
 
-  def total_credit
-    total_credit = 0
+
+  def credit_calculator
+    credit_sum = 0
     @credit.each { | key, array |
-      total_credit +=  array.first
+      credit_sum +=  array.first
     }
-    return total_credit
+    @total_credit += credit_sum
   end
 
-  def total_debit
-    total_debit = 0
+  def  debit_calculator
+    debit_sum = 0
     @debit.each { | key, array |
-      total_debit +=  array.first
+      debit_sum +=  array.first
     }
-    return total_debit
+    @total_debit += debit_sum
   end
   
-  # def balance
-  #   total_credit = @credit.each
-  # end
+  def balance
+    @total_credit - @total_debit
+  end
   
   def date
     current = Date.today
