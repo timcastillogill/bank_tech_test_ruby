@@ -1,6 +1,32 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/TimGill/Documents/Github/Makers_main/09_week/bank_tech_test_ruby/spec/bank_statement_printer_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          2,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/TimGill/Documents/Github/Makers_main/09_week/bank_tech_test_ruby/lib/bank_statement_printer.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/TimGill/Documents/Github/Makers_main/09_week/bank_tech_test_ruby/spec/bank_transaction_spec.rb": {
         "lines": [
           1,
@@ -97,7 +123,6 @@
           null,
           null,
           null,
-          null,
           1,
           15,
           15,
@@ -132,6 +157,6 @@
         ]
       }
     },
-    "timestamp": 1606825116
+    "timestamp": 1606825516
   }
 }

@@ -23,7 +23,6 @@ class BankTransaction
     end
   end
 
-
   def credit_calculator
     credit_sum = 0
     @total_credit = 0
