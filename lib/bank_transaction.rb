@@ -15,8 +15,12 @@ class BankTransaction
   end
   
   def withdraw(money)
+    if @balance < money
+      return 'You do not have the funds. Please ask inside about a payday loan'
+    else
       @debit[@transaction_number += 1] = [money, date]
       balance_calculator
+    end
   end
 
 

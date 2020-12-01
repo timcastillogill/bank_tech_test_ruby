@@ -56,5 +56,10 @@ describe BankTransaction do
     expect(banking.balance).to eq 900.00
   end
 
+  # EDGE CASE
+  it 'will not allow a client to withdraw funds if none are available' do
+    banking.deposit(100)
+    expect(banking.withdraw(200)).to eq 'You do not have the funds. Please ask inside about a payday loan'
+  end
 
 end
