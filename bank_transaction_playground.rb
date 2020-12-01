@@ -2,11 +2,18 @@ require './lib/bank_transaction.rb'
 require 'time'
 
 p banking = BankTransaction.new
-p banking.deposit(400)
+
+p "DEPOSIT 200"
 p banking.deposit(200)
-p banking.withdrawl(100)
 
-p banking.credit_calculator
-p banking.debit_calculator
+p "TOTAL_CREDIT EXP 200"
+p banking.total_credit
 
+p "DEPOSIT 400"
+p banking.deposit(400)
+
+p "TOTAL_CREDIT EXP 600"
+p banking.balance
+
+p "BALANCE EXP 600"
 p banking.balance
