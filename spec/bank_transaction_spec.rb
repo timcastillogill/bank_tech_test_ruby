@@ -36,10 +36,17 @@ describe BankTransaction do
     expect(banking.debit).to include {[50, date]}
   end
 
-  it 'will calculate the total credit in a clients account' do
+  it 'will calculate the total CREDIT in a clients account' do
     banking.deposit(200)
     banking.deposit(400)
     expect(banking.total_credit).to eq 600
+  end
+
+  it 'will calculate the total DEBITS on a clients account' do
+    banking.deposit(1000)
+    banking.withdrawl(300)
+    banking.withdrawl(200)
+    expect(banking.total_debit).to eq 500
   end
 
 

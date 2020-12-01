@@ -24,6 +24,14 @@ class BankTransaction
     }
     return total_credit
   end
+
+  def total_debit
+    total_debit = 0
+    @debit.each { | key, array |
+      total_debit +=  array.first
+    }
+    return total_debit
+  end
   
   # def balance
   #   total_credit = @credit.each
