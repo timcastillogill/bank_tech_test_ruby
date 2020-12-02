@@ -2,13 +2,10 @@
 
 require_relative 'bank_transaction'
 
+# Prints the transactions of the client
 class BankStatementPrinter
   def initialize(transaction)
     @transaction = transaction
-  end
-
-  def column_titles
-    'date  | |  credit  | |  debit  | |  balance'
   end
 
   def printer
@@ -23,6 +20,12 @@ class BankStatementPrinter
     end
     printing.join('')
   end
+
+  def column_titles
+    'date  | |  credit  | |  debit  | |  balance'
+  end
+
+  # private
 
   def merged_transactions
     import_credit_transactions.merge(import_debit_transactions).sort.reverse_each.to_h

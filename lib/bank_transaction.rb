@@ -1,4 +1,6 @@
 # frozen_string_literal: true
+
+# Allows the client to deposit and withdraw money from their account
 class BankTransaction
   attr_reader :credit, :debit, :transaction_number, :balance
 
@@ -24,6 +26,8 @@ class BankTransaction
       @debit[@transaction_number] = [money, date, @balance]
     end
   end
+
+  # private
 
   def credit_calculator
     credit_sum = 0
