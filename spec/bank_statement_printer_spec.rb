@@ -31,10 +31,9 @@ describe BankStatementPrinter do
     expect(statement.merged_transactions).to eq 3=>[50, date, 'debit'], 2=>[500, date, 'debit'], 1=>[1000, date, 'credit']
   end
 
-
-  # it 'will return the balance of a client' do
-  #   @transaction.deposit(100)
-  #   expect(statement.printer).to eq 100
-  # end
+  it 'will return the balance of a client after 1 DEPOSIT' do
+    @transaction.deposit(100)
+    expect(statement.printer).to eq "date  | |  credit  | |  debit  | |  balance\n #{date}  | |  100  | |  | |  100\n"
+  end
 
 end
