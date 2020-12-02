@@ -1,5 +1,7 @@
-require './lib/bank_transaction.rb'
-require './lib/bank_statement_printer.rb'
+# frozen_string_literal: true
+
+require './lib/bank_transaction'
+require './lib/bank_statement_printer'
 require 'time'
 
 p transaction = BankTransaction.new
