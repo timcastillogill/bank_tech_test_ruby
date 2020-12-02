@@ -3,8 +3,8 @@ class BankTransaction
   attr_reader :credit, :debit, :transaction_number, :balance
 
   def initialize
-    @credit = Hash.new { | amount, date | amount[date] }
-    @debit = Hash.new { | amount, date | amount[date]  }
+    @credit = Hash.new { | amount, date, balance | amount[date, balance] }
+    @debit = Hash.new { | amount, date, balance | amount[date, balance]  }
     @transaction_number = 0
     @balance = 0
   end
@@ -12,6 +12,7 @@ class BankTransaction
   def deposit(money)
     @credit[@transaction_number += 1] = [money, date]
     balance_calculator
+    @credit[@transaction_number] = [money, date, @balance]
   end
   
   def withdraw(money)
@@ -20,6 +21,7 @@ class BankTransaction
     else
       @debit[@transaction_number += 1] = [money, date]
       balance_calculator
+      @debit[@transaction_number] = [money, date, @balance]
     end
   end
 
@@ -45,6 +47,7 @@ class BankTransaction
     credit_calculator
     debit_calculator
     @balance = @total_credit - @total_debit
+    return @balance
   end
   
   def date

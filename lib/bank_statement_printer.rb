@@ -14,13 +14,13 @@ class BankStatementPrinter
     #{3=>[50, "02/12/2020", "debit"], 2=>[500, "02/12/2020", "debit"], 1=>[1000, "02/12/2020", "credit"]}
     printing = ["#{column_titles}\n"]
     merged_transactions.each { | key, array | 
-      if array[2] == 'credit'
-        printing.push("#{array[1]}  | |  #{array[0]}  | |  | |  #{@transaction.balance}\n")
-      elsif array[2] == 'debit'
-        printing.push(("#{array[1]}  | |  | |  #{array[0]}  | |  #{@transaction.balance}\n"))
+      if array[3] == 'credit'
+        printing.push("#{array[1]}  | |  #{array[0]}  | |  | |  #{array[2]}\n")
+      elsif array[3] == 'debit'
+        printing.push(("#{array[1]}  | |  | |  #{array[0]}  | |  #{array[2]}\n"))
       end
     }
-    return printing.join(" ")
+    return printing.join("")
   end
 
   def merged_transactions

@@ -11,19 +11,19 @@ describe BankTransaction do
 
   it 'accepts a deposit amount of £100.00' do
     banking.deposit(100)
-    expect(banking.credit).to eq 1 => [100, date]
+    expect(banking.credit).to eq 1 => [100, date, 100]
   end
 
   it 'accepts a deposit amount of £100.00 + £200.00' do
     banking.deposit(100)
     banking.deposit(200)
-    expect(banking.credit).to eq 1=> [100, date], 2=>[200, date]
+    expect(banking.credit).to eq 1=> [100, date, 100], 2=>[200, date, 300]
   end
 
   it 'accepts a withdraw amount of £100.00' do
     banking.deposit(200)
     banking.withdraw(100)
-    expect(banking.debit).to eq 2=>[100.00, date]
+    expect(banking.debit).to eq 2=>[100.00, date, 100]
   end
 
   it 'adds the date when money is deposited' do
