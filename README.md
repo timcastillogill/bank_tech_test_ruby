@@ -86,6 +86,10 @@ The statement will have headings separated with ||
 ```
 ### Planning Tables
 
+![alt text](https://github.com/timcastillogill/bank_tech_test_ruby/blob/main/diagrams/Screenshot%202020-12-02%20at%2017.21.14.png)
+
+![alt text](https://github.com/timcastillogill/bank_tech_test_ruby/blob/main/diagrams/Screenshot%202020-12-02%20at%2017.25.37.png)
+
 
 
 ## Approach
