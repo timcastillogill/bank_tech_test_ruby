@@ -84,10 +84,9 @@ As a client,
 So that I can see if the transaction was a credit or debit,
 The statement will have headings separated with ||
 ```
+### Planning Tables
 
-[Planning BankTransaction](https://www.notion.so/3fece0ea0e094ddd90eed1b2221ea87a)
 
-[Planning BankStatementPrinter](https://www.notion.so/502fcbe73d2f42abbedc8cbd72e79eaf)
 
 ## Approach
 
