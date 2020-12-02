@@ -24,6 +24,14 @@ describe BankStatementPrinter do
     expect(statement.import_debit_transactions).to eq 3=>[50, date, 'debit'], 2=>[500, date, 'debit']
   end
 
+  it 'will merge credit and debit transactions' do
+    @transaction.deposit(1000)
+    @transaction.withdraw(500)
+    @transaction.withdraw(50)
+    expect(statement.merged_transactions).to eq 3=>[50, date, 'debit'], 2=>[500, date, 'debit'], 1=>[1000, date, 'credit']
+  end
+
+
   # it 'will return the balance of a client' do
   #   @transaction.deposit(100)
   #   expect(statement.printer).to eq 100
